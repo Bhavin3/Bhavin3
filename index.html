@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0f19" />
+  <title>Bhavin — Internet Card</title>
+  <meta name="description" content="Bhavin's personal internet card — builder, learner, creator." />
+  <style>
+    * { box-sizing: border-box; }
+    :root{
+      --bg:#070b12;
+      --card:rgba(17,24,39,.68);
+      --line:rgba(255,255,255,.10);
+      --text:#f8fafc;
+      --muted:#a8b3c7;
+      --accent:#7c9cff;
+      --accent2:#64f0d1;
+    }
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(124,156,255,.18), transparent 26%),
+        radial-gradient(circle at 85% 15%, rgba(100,240,209,.14), transparent 24%),
+        radial-gradient(circle at 50% 90%, rgba(137,80,255,.10), transparent 25%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+    .noise{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.05;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+    }
+    .wrap{
+      width:min(920px,92%);
+      margin:auto;
+      padding:56px 0 72px;
+      position:relative;
+      z-index:1;
+    }
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{
+      font-weight:800;
+      letter-spacing:.08em;
+      font-size:.92rem;
+      color:#dbe6ff;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:#5bf0a5;
+      box-shadow:0 0 18px rgba(91,240,165,.7);
+    }
+    .hero{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      backdrop-filter:blur(16px);
+      border-radius:28px;
+      padding:38px;
+      box-shadow:0 25px 80px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:250px;height:250px;
+      border-radius:50%;
+      top:-120px;right:-80px;
+      background:radial-gradient(circle,rgba(124,156,255,.26),transparent 68%);
+    }
+    .eyebrow{
+      display:inline-block;
+      font-size:.8rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#b8c7ff;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(2.6rem,8vw,5.8rem);
+      line-height:.95;
+      letter-spacing:-.06em;
+      max-width:780px;
+    }
+    .gradient{
+      background:linear-gradient(90deg,#ffffff,#9fb1ff,#7cf3da);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .bio{
+      max-width:650px;
+      margin:24px 0 0;
+      color:var(--muted);
+      font-size:clamp(1rem,2vw,1.15rem);
+      line-height:1.7;
+    }
+    .quote{
+      margin-top:22px;
+      padding-left:14px;
+      border-left:2px solid rgba(124,156,255,.65);
+      color:#d9e2f2;
+      font-size:.95rem;
+    }
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:22px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      backdrop-filter:blur(14px);
+      border-radius:22px;
+      padding:24px;
+    }
+    .card h2{
+      margin:0 0 16px;
+      font-size:1rem;
+      color:#e8edff;
+      letter-spacing:.04em;
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .chip{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.045);
+      padding:10px 13px;
+      border-radius:999px;
+      color:#dce5f5;
+      font-size:.9rem;
+    }
+    .links{
+      display:grid;
+      gap:10px;
+    }
+    .link{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      color:var(--text);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.035);
+      padding:14px 16px;
+      border-radius:14px;
+      transition:.2s ease;
+    }
+    .link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(124,156,255,.45);
+      background:rgba(124,156,255,.08);
+    }
+    .link span:last-child{
+      color:#9fb1ff;
+    }
+    .footer{
+      text-align:center;
+      color:#708098;
+      margin-top:24px;
+      font-size:.85rem;
+    }
+    .cursorGlow{
+      position:fixed;
+      width:220px;height:220px;
+      border-radius:50%;
+      pointer-events:none;
+      background:radial-gradient(circle,rgba(124,156,255,.12),transparent 68%);
+      transform:translate(-50%,-50%);
+      z-index:0;
+      transition:opacity .2s;
+    }
+    @media(max-width:760px){
+      .wrap{padding-top:28px;}
+      .hero{padding:28px 22px;border-radius:22px;}
+      .grid{grid-template-columns:1fr;}
+      .top{margin-bottom:18px;}
+      .cursorGlow{display:none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursorGlow" id="glow"></div>
+
+  <main class="wrap">
+    <div class="top">
+      <div class="brand">BHAVIN / INTERNET CARD</div>
+      <div class="status"><span class="dot"></span> online & building</div>
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">Engineer • Creator • Explorer</span>
+      <h1>Hi, I’m <span class="gradient">Bhavin.</span></h1>
+      <p class="bio">
+        I’m into tech, Web3, building things on the internet, and learning by doing.
+        This is my little corner of the web.
+      </p>
+      <div class="quote">
+        I build, learn, and explore the internet one experiment at a time.
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>What I’m into</h2>
+        <div class="chips">
+          <span class="chip">Full Stack</span>
+          <span class="chip">Python</span>
+          <span class="chip">HTML / CSS</span>
+          <span class="chip">Web3</span>
+          <span class="chip">Crypto Research</span>
+          <span class="chip">Content Creation</span>
+          <span class="chip">Community</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Find me online</h2>
+        <div class="links">
+          <a class="link" href="https://x.com/web3Bhavin" target="_blank" rel="noopener">
+            <span>X / Twitter · @web3Bhavin</span><span>↗</span>
+          </a>
+          <a class="link" href="https://github.com/Bhavin3" target="_blank" rel="noopener">
+            <span>GitHub · Bhavin3</span><span>↗</span>
+          </a>
+          <a class="link" href="https://t.me/Justinxpixl" target="_blank" rel="noopener">
+            <span>Telegram · @Justinxpixl</span><span>↗</span>
+          </a>
+          <div class="link" style="cursor:default;">
+            <span>Discord · Bhavin07</span><span>●</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Built with curiosity • © <span id="year"></span> Bhavin</div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const glow = document.getElementById("glow");
+    window.addEventListener("mousemove", (e) => {
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
+    });
+  </script>
+</body>
+</html>
