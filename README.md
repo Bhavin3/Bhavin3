@@ -1,13 +1,20 @@
-# Hi, I'm Bhavin 👋
+# NUVRYN
 
-Web3 explorer and crypto content creator from India.
+**Web3 • Tech • Internet Culture**
 
-- 🔭 Currently building useful Web3 tools
-- 🌱 Learning Python, HTML, CSS and JavaScript
-- 🔐 Interested in DeFi and blockchain security
-- ✍️ Creating content that makes blockchain easier to understand
+A fresh digital identity built from zero — exploring Web3, learning by building, and creating useful content along the way.
 
-## Connect with me
+- ⚡ Exploring Web3, crypto and emerging tech
+- 🧠 Learning Python, HTML, CSS and JavaScript
+- 🛠️ Building small experiments and useful internet projects
+- 🔐 Interested in DeFi, blockchain security and onchain culture
+- ✍️ Creating simple, human-first content around what I learn
 
-- X: [@Bhavinn07](https://x.com/Bhavinn07)
-- LinkedIn: [Bhavin Padhiyar](https://www.linkedin.com/in/bhavin-padhiyar-990947216)
+## Current focus
+
+**Build. Explore. Create. Repeat.**
+
+## Connect
+
+- X: [@web3Bhavin](https://x.com/web3Bhavin)
+- Telegram: [@Justinxpixl](https://t.me/Justinxpixl)
