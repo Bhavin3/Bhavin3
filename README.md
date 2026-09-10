@@ -29,6 +29,17 @@ I'm building my way through **Web3, full-stack development and internet products
 
 ---
 
+## Featured Project — GRIDFALL
+
+**NUVRYN // GRIDFALL** is a neon arcade survival game built from scratch with HTML5 Canvas, CSS and vanilla JavaScript.
+
+**Highlights:** animated cyber UI, progressive difficulty, score + high score, mobile controls, player trails, dodge sparks, particles and sound.
+
+[![Play GRIDFALL](https://img.shields.io/badge/PLAY%20GRIDFALL-LIVE-58F7E8?style=for-the-badge&logo=githubpages&logoColor=07111B)](https://bhavin3.github.io/nuvryn-gridfall/)
+[![View Repo](https://img.shields.io/badge/View%20Repo-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Bhavin3/nuvryn-gridfall)
+
+---
+
 ## Tech Stack
 
 <p>
@@ -59,6 +70,7 @@ Instagram / YouTube: **@itsnuvryn**
 
 ## What I'm Building
 
+- **GRIDFALL** — neon arcade survival game
 - **NUVRYN** — creator identity around Web3 + tech
 - **Personal Website** — live on GitHub Pages
 - **Web Experiments** — small projects while learning full stack
